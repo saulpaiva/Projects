@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en,pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de contato</title>
+
+</head>
+<body>
+    
+    <h1>Formulário de Contato</h1>
+
+    <p>O formulário abaixo foi desenvolvido utilizando apenas HTML</p>
+
+    <form action="mailto:saulpaiva@gmail.com" method="post" enctype="text/plain">
+    <!-- exemplo da funcionalidade "action" -->
+
+        <fieldset aria-label="Formulário para contato">
+            
+            <legend><strong>Contato</strong></legend>
+    
+
+                <label for="name">Nome:</label>
+                <br>
+                <input type="text" 
+                name="Nome do usuário" 
+                id="name" 
+                placeholder="Digite seu nome..."
+                autocomplete="name" 
+                required>
+                <br>
+                <br>    
+
+                <label for="email">Email:</label>
+                <br>
+                <input type="email" 
+                name="Email do usuário" 
+                id="email" 
+                placeholder="Insira seu email..." 
+                autocomplete="email"
+                required>
+                <br>
+                <br>
+
+                <label for="message">Mensagem:</label>
+                <br>
+                <textarea name="Mensagem do usuário" 
+                id="message" 
+                cols="30" 
+                rows="10" 
+                placeholder="Diga algo sobre você..."
+                autocomplete="work"></textarea>
+                <br>
+                <br>
+           
+            <button type="submit">Enviar</button>
+    
+        </fieldset>
+
+    </form>
+
+    <br>
+    <br>
+
+    <address>
+
+        <strong>Saul Paiva de Oliveira Dias</strong> 
+        
+        <ul>
+            <!-- bug of mail:to not openig: add https://mailto:user@example.com -->
+            <li><a href="https://mailto:saulpaiva@gmail.com" target="_blank">Gmail</a></li>
+
+            <li><a href="https://github.com/saulpaiva/" target="_blank">GitHub</a></li>
+
+            <li><a href="https://www.linkedin.com/in/saul-p-92116614a/" target="_blank">LinkedIn</a></li>
+        </ul>
+
+    </address>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    color: #f5f6f7;
+    font-family: 'Chivo Mono', monospace;
+    font-size: 20px;
+    background: rgb(84, 84, 152);
+}
+
+.description {
+    margin: 1rem auto;
+    text-align: center;
+    max-width: 500px;
+    padding-bottom: 10px;
+    font-size: medium;
+}
+
+h1 {
+    margin: 1rem auto;
+    text-align: center;
+    max-width: 500px;
+    padding-top: 40px;
+}
+
+p {
+    padding-top: 10px;
+}
+
+label:last-of-type {
+    padding-top: 5vh;
+}
+
+a {
+    color: white;
+}
+
+form {
+    width: 80vw;
+    max-width: 700px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding-top: 15px;
+    background: #1b1b32;
+    border-radius: 10px;
+}
+
+fieldset {
+    border: none;
+    padding: 2rem 2rem;
+}
+
+label {
+    display: block;
+    margin:  0;
+}
+
+
+input,
+textarea, 
+select {
+  margin: 15px 0;
+  width: 100%;
+  min-height: 2em;
+  padding-left: 0.6em;
+}
+
+select {
+    height: 2rem;
+}
+
+.inline {
+    width: unset;
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    margin: 1em auto;
+    height: 2em;
+    font-size: 1.1rem;
+    background-color: #459261;
+    color: white;
+    min-width: 300px;
+    border: none;
+  }

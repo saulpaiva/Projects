@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Survey Form Project</title>
+</head>
+<body>
+    <h1 id="title">Survey Form Project</h1>
+
+    <p id="description" class="description">Project for Responsive Web Design course at <a href="https://www.freecodecamp.org/">freeCodeCamp</a></p>
+    
+    <form id="survey-form" action="">
+        <fieldset>
+
+            <label for="name" id="name-label">Name <input id="name" type="text"  placeholder="Enter your name"required></label>
+            <label for="email" id="email-label">Email <input id="email" type="email"  placeholder="Enter your email"required></label>
+            <label for="age" id="number-label">Age <small>(optional)</small>: <input id="number" type="number" min="10" max="120" placeholder="Age"></label>
+
+            <label for="role">Which option best describes your current role?
+                <select name="current-role" id="dropdown">
+                    <option value="none" selected="true" disabled="disabled">Select current role</option>
+                    <option value="1">Student</option>
+                    <option value="2">Full time Job</option>
+                    <option value="3">Part time Job</option>
+                    <option value="4">Full time Learner</option>
+                    <option value="5">Prefer not to say</option>
+                    <option value="6">Other</option>
+                </select>
+            </label>
+
+
+            <p>Would you recommend freeCodeCamp to a friend?</p>
+
+            <label for="yes"><input class="inline" type="radio" value="definitely" name="recommendation" id="yes" checked> Definitely</label>
+            <label for="maybe"><input class="inline" type="radio" value="maybe" name="recommendation" id="maybe"> Maybe</label>
+            <label for="not-sure"><input class="inline" type="radio" value="not-sure" name="recommendation" id="not-sure"> Not sure</label>
+
+            <p>What would you like to see improved: <small>(check all that apply)</small></p>
+
+            <label for="front-end"><input  class="inline" type="checkbox" value="front-end" name="front-end" id="front-end"> Front-end Projects</label>
+            <label for="back-end"><input  class="inline" type="checkbox" value="back-end" name="back-end" id="back-end"> Back-end Projects</label>
+            <label for="data-vis"><input class="inline" type="checkbox" value="data-vis" name="data-vis" id="data-vis"> Data Visualization</label>
+            <label for="challenges"><input class="inline" type="checkbox" value="challenges" name="challenges" id="challenges"> Challenges</label>
+            <label for="community"><input class="inline" type="checkbox" value="community" name="community" id="community"> Open Source Community</label>
+            <label for="help-rooms"><input class="inline" type="checkbox" value="help-rooms" name="help-rooms" id="help-rooms"> Gitter help rooms</label>
+            <label for="videos"><input class="inline" type="checkbox" value="videos" name="videos" id="videos"> Videos</label>
+            <label for="meetups"><input class="inline" type="checkbox" value="meetups" name="meetups" id="meetups"> City Meetups</label>
+            <label for="wiki"><input class="inline" type="checkbox" value="wiki" name="wiki" id="wiki"> Wiki</label>
+            <label for="forum"><input class="inline" type="checkbox" value="forum" name="forum" id="forum"> Forum</label>
+            <label for="more-courses"><input class="inline" type="checkbox" value="more-courses" name="more-courses" id="more-courses"> Additional Courses</label>
+
+            <label for="comments-suggestions">Any comments or suggestions?
+                <textarea id="comments-suggestions" placeholder="Enter your comment here..." rows="5" cols="60"></textarea>
+            </label>
+
+            <input id="submit" type="submit" value="Submit" />
+        </fieldset>
+
+    </form>
+</body>
+</html>
