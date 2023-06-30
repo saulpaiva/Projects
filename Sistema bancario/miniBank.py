@@ -1,6 +1,9 @@
 # Made by Saul Paiva (https://github.com/saulpaiva/)
 
+import datetime
 from decimal import Decimal
+
+timestamp = datetime.datetime.now().strftime("[%d-%m-%Y] - %H:%M:%S") # Registra a data e a hora das operações bancárias
 
 def has_more_than_two_decimal_places(value): # verifica se o valor tem no máximo 2 casas decimais
     decimal_value = Decimal(str(value))
@@ -28,7 +31,7 @@ Selecione uma das opções:
 
 => """
 
-t = 0 # variável temporária
+t = 0.00 # variável temporária
 saldo = 0.00
 limite = 500
 extrato = "----- EXTRATO -----\n\n"
@@ -47,8 +50,11 @@ while True:
             print("Valor inválido, por favor selecione novamente a operação desejada.")
         else:
             saldo += t
-            print(f"\nSeu novo saldo é R$ {saldo}")
-            extrato += "[hora] Depósito de R$ " + str(t) + "\n" + "Novo saldo da conta: R$" + str(saldo) + "\n\n"
+            saldo_formatado = f"{saldo:.2f}" # formata o saldo em :.2f (monetário)
+            t_formatado = f"{t:.2f}" # formata t em :.2f (monetário)
+
+            print(f"\nSeu novo saldo é R$ {saldo_formatado}")
+            extrato += f"{timestamp} \nDepósito de R$ " + str(t_formatado) + "\n" + "Novo saldo: R$ " + str(saldo_formatado) + "\n\n"
 
     elif opcao == "s":
         # print("Saque")
@@ -69,9 +75,12 @@ while True:
 
         else:
             saldo -= t
-            print(f"\nSeu novo saldo é R$ {saldo}")
+            saldo_formatado = f"{saldo:.2f}" # formata o saldo em :.2f (monetário)
+            t_formatado = f"{t:.2f}" # formata t em :.2f (monetário)
 
-            extrato += "[hora] Saque de R$ " + str(t) + "\n" + "Novo saldo da conta: R$" + str(saldo) + "\n\n"
+            print(f"\nSeu novo saldo é R$ {saldo_formatado}")
+
+            extrato += f"{timestamp} \nSaque de R$ " + str(t_formatado) + "\n" + "Novo saldo: R$ " + str(saldo_formatado) + "\n\n"
 
             numero_saques += 1
 
