@@ -1,5 +1,6 @@
 # Made by Saul Paiva (https://github.com/saulpaiva/)
 
+
 import datetime
 from decimal import Decimal
 
@@ -36,6 +37,7 @@ saldo = 0.00
 limite = 500
 extrato = "----- EXTRATO -----\n\n"
 numero_saques = 0
+numero_depositos = 0
 LIMITE_SAQUES = 3
 
 while True:
@@ -54,7 +56,9 @@ while True:
             t_formatado = f"{t:.2f}" # formata t em :.2f (monetário)
 
             print(f"\nSeu novo saldo é R$ {saldo_formatado}")
-            extrato += f"{timestamp} \nDepósito de R$ " + str(t_formatado) + "\n" + "Novo saldo: R$ " + str(saldo_formatado) + "\n\n"
+            extrato += f"\033[93m{timestamp}\033[0m \nDepósito de R$ " + str(t_formatado) + "\n" + "Novo saldo: R$ " + str(saldo_formatado) + "\n\n"
+
+            numero_depositos += 1
 
     elif opcao == "s":
         # print("Saque")
@@ -80,13 +84,17 @@ while True:
 
             print(f"\nSeu novo saldo é R$ {saldo_formatado}")
 
-            extrato += f"{timestamp} \nSaque de R$ " + str(t_formatado) + "\n" + "Novo saldo: R$ " + str(saldo_formatado) + "\n\n"
+            extrato += f"\033[93m{timestamp}\033[0m \nSaque de R$ " + str(t_formatado) + "\n" + "Novo saldo: R$ " + str(saldo_formatado) + "\n\n"
 
             numero_saques += 1
 
     elif opcao == "e":
 
-        print("\n" + extrato + "-------------------")
+        if (numero_depositos + numero_saques) == 0 :
+            print("\n" + extrato + f"\033[93m{timestamp}\033[0m \nSem movimentações\n\n" + "-------------------")
+
+        else :
+            print("\n" + extrato + "-------------------")
 
     elif opcao == "q":
         print("Saindo...")
